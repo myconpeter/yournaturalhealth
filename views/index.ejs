@@ -584,7 +584,8 @@
 												<div class="meafe-init-wrapper top">
 													<div class="meafe-counter-wrapper">
 														<span
-															class="meafe-counter-init"
+															class=""
+															style="font-size: 30px"
 															id="counter-dff4a41"
 															>0</span
 														>
@@ -599,6 +600,42 @@
 														Years of Operations
 													</h4>
 												</div>
+
+												<script>
+													window.addEventListener(
+														'DOMContentLoaded',
+														() => {
+															const counterElement =
+																document.getElementById(
+																	'counter-dff4a41'
+																);
+															const targetValue = 7; // Target number
+															const duration = 2000; // Animation duration in milliseconds
+															const frameRate = 1000 / 60; // 60 FPS
+
+															let currentValue = 0;
+															const increment =
+																targetValue /
+																(duration / frameRate);
+
+															function updateCounter() {
+																currentValue += increment;
+																if (currentValue >= targetValue) {
+																	counterElement.textContent =
+																		targetValue.toFixed(0); // Ensure it ends cleanly at 10
+																} else {
+																	counterElement.textContent =
+																		Math.floor(currentValue); // Display the current number
+																	requestAnimationFrame(
+																		updateCounter
+																	); // Continue the animation
+																}
+															}
+
+															updateCounter();
+														}
+													);
+												</script>
 											</div>
 										</div>
 									</div>
@@ -678,7 +715,8 @@
 												<div class="meafe-init-wrapper top">
 													<div class="meafe-counter-wrapper">
 														<span
-															class="meafe-counter-init"
+															class=""
+															style="font-size: 30px"
 															id="counter-920dc38"
 															>0</span
 														>
@@ -698,6 +736,30 @@
 							</div>
 						</div>
 					</div>
+
+					<script>
+						window.addEventListener('DOMContentLoaded', () => {
+							const counterElement = document.getElementById('counter-920dc38');
+							const targetValue = 18; // Target number
+							const duration = 2000; // Animation duration in milliseconds
+							const frameRate = 1000 / 60; // 60 FPS
+
+							let currentValue = 0;
+							const increment = targetValue / (duration / frameRate);
+
+							function updateCounter() {
+								currentValue += increment;
+								if (currentValue >= targetValue) {
+									counterElement.textContent = targetValue.toFixed(0); // Ensure it ends cleanly at 10
+								} else {
+									counterElement.textContent = Math.floor(currentValue); // Display the current number
+									requestAnimationFrame(updateCounter); // Continue the animation
+								}
+							}
+
+							updateCounter();
+						});
+					</script>
 				</div>
 				<div
 					class="elementor-element elementor-element-230c2143 e-flex e-con-boxed e-con e-parent"
